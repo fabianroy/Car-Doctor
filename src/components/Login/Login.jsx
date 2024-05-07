@@ -1,11 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg';
 import { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import swal from 'sweetalert2';
+import axios from 'axios';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(location);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -18,6 +22,16 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(location?.state ? location?.state : '/');
+
+                 // get access token
+                 
+                const loggedInUser = { email }
+                axios.post('http://localhost:3000/jwt', loggedInUser, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+
                 swal.fire({
                     title: "Logged In!",
                     text: "You have been logged in successfully!",
