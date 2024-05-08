@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { AuthContext } from '../../provider/AuthProvider';
 import img from '../../assets/images/login/login.svg';
 import swal from 'sweetalert2';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser } = useAuth();
 
     // register user and fetch if he is not already registered. If registered, show error message and dont fetch the data and redirect show user is already registered
 

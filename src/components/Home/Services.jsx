@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import useServices from "../../hooks/useServices";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
 
-    const [services , setServices] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:3000/services')
-        .then(res => res.json())
-        .then(data => setServices(data))
-    }, []);
+    // DRY Principle: Don't Repeat Yourself
+    const services = useServices();
 
     return (
         <div className="my-20">
