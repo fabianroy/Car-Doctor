@@ -42,7 +42,7 @@ const BookService = () => {
             confirmButtonText: "Yes, Book it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/bookings`, {
+                fetch(`https://car-doctor-server-one-pi.vercel.app/bookings`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

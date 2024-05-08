@@ -32,7 +32,7 @@ const Register = () => {
                 })
             })
             .then(() => {
-                fetch(`http://localhost:3000/users`, {
+                fetch(`https://car-doctor-server-one-pi.vercel.app/users`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

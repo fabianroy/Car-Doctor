@@ -9,7 +9,7 @@ const BookingList = () => {
     const [bookings, setBookings] = useState([]);
     const axiosSecure = useAxiosSecure();
 
-    // const url = `http://localhost:3000/bookings?email=${user?.email}`;
+    // const url = `https://car-doctor-server-one-pi.vercel.app/bookings?email=${user?.email}`;
     const url = `/bookings?email=${user?.email}`;
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const BookingList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/bookings/${id}`, {
+                fetch(`https://car-doctor-server-one-pi.vercel.app/bookings/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -51,7 +51,7 @@ const BookingList = () => {
     }
 
     const handleConfirm = id => {
-        fetch(`http://localhost:3000/bookings/${id}`, {
+        fetch(`https://car-doctor-server-one-pi.vercel.app/bookings/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
