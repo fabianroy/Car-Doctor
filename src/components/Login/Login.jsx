@@ -26,7 +26,7 @@ const Login = () => {
                  // get access token
                  
                 const loggedInUser = { email }
-                axios.post('https://car-doctor-server-one-pi.vercel.app/jwt', loggedInUser, { withCredentials: true })
+                axios.post('http://localhost:3000/jwt', loggedInUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })

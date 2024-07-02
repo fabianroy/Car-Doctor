@@ -21,12 +21,12 @@ const AuthProvider = ({ children }) => {
 
             // if user exist then issue an token
             if (currentUser) {
-                axios.post('https://car-doctor-server-one-pi.vercel.app/jwt', loggedUser, { withCredentials: true })
+                axios.post('http://localhost:3000/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log("token response", res.data);
                     })
             } else {
-                axios.post('https://car-doctor-server-one-pi.vercel.app/logout', loggedUser, { withCredentials: true })
+                axios.post('http://localhost:3000/logout', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log("logout response", res.data);
                     })
