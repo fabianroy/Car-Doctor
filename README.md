@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Car Doctor
 Site Link : [Car Doctor - Live Site](https://car-doctor-fcd38.web.app)
 
